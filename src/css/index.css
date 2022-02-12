@@ -3,6 +3,7 @@ header > .head {
   background-color: #333;
   height: 40px;
   position: relative;
+  z-index: 3;
 }
 header > .head > .wrapper > a {
   float: left;
@@ -32,12 +33,49 @@ header > .head > .wrapper .shopping {
   background: #424242;
   text-align: center;
   cursor: pointer;
-  line-height: 40px;
   position: relative;
+  z-index: 3;
+  line-height: 40px;
+}
+header > .head > .wrapper .shopping:hover {
+  background-color: white;
+  color: #FF6700;
+}
+header > .head > .wrapper .shopping:hover + .shoppinglist {
+  height: 90px;
+  transition: height 1s;
 }
 header > .head > .wrapper .shopping > span {
   margin-right: 5px;
   font-size: 18px;
+}
+header > .head > .wrapper .shoppinglist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 300px;
+  top: 40px;
+  overflow: hidden;
+  height: 0px;
+  right: 146px;
+  bottom: -90px;
+  z-index: 2;
+  background-color: white;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  font-size: 12px;
+  line-height: 90px;
+  display: block;
+}
+header > .head > .wrapper .shoppinglist span {
+  display: none;
+}
+header > .head > .wrapper .shoppinglist .jiazai {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 header > .head2 {
   height: 100px;
@@ -45,6 +83,7 @@ header > .head2 {
   position: relative;
 }
 header > .head2 > .wrapper > .xiaomi {
+  display: block;
   float: left;
   color: #f69000;
   line-height: 100px;
@@ -108,15 +147,15 @@ header > .head2 > .wrapper > .daohan > .xbk > .erji > .wrapper > ul > .fgx {
   margin-top: 10px;
   border-right: 1px solid #bbb;
 }
-header > .head2 > .wrapper > .shousuo {
+header > .head2 > .wrapper > .sousuo {
   float: left;
   margin-top: 20px;
   position: relative;
 }
-header > .head2 > .wrapper > .shousuo > input {
+header > .head2 > .wrapper > .sousuo > input {
   border: 1px solid #e1e1e1;
 }
-header > .head2 > .wrapper > .shousuo > input:nth-child(2) {
+header > .head2 > .wrapper > .sousuo > input:nth-child(2) {
   height: 62px;
   width: 60px;
   float: left;
@@ -126,23 +165,33 @@ header > .head2 > .wrapper > .shousuo > input:nth-child(2) {
   border-left: 0px;
   cursor: pointer;
 }
-header > .head2 > .wrapper > .shousuo > #seekbox {
+header > .head2 > .wrapper > .sousuo .fangdajing {
+  height: 62px;
+  width: 62px;
+  right: 0px;
+  transition: 0.2s;
+}
+header > .head2 > .wrapper > .sousuo .fangdajing:hover {
+  background-color: #ff6700;
+  color: white;
+}
+header > .head2 > .wrapper > .sousuo > #seekbox {
   float: left;
   height: 60px;
   width: 240px;
   padding-left: 15px;
   line-height: 65px;
 }
-header > .head2 > .wrapper > .shousuo > div {
+header > .head2 > .wrapper > .sousuo > div {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  text-align: center;
+  line-height: 62px;
   cursor: pointer;
 }
-header > .head2 > .wrapper > .shousuo > div > span {
+header > .head2 > .wrapper > .sousuo > div > span {
   font-size: 30px;
 }
-header > .head2 > .wrapper > .shousuo:hover > input {
+header > .head2 > .wrapper > .sousuo:hover > input {
   border-color: #b4b4b4;
 }
 header > #banner {

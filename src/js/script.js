@@ -33,7 +33,7 @@ $(function(){
         clearInterval(change_self_time);
         $("#big_banner_change_wrap").children().show();
     },function(){
-        change_self_time = setInterval(automatic, 3000);
+        let change_self_time = setInterval(automatic, 3000);
         $("#big_banner_change_wrap").children().hide();
     })
     $("#big_banner_change_prev").click(function(){
@@ -69,3 +69,17 @@ window.onscroll=function(){
         $(this).siblings().removeClass('active');
         $(this).addClass('active');
     })
+    $('.shopping').hover(function(){
+        let time2=setTimeout(function(){//定时器 
+            $(".jiazai").css("display","none");
+            $(".jiazaiwenzi").delay(1000).css("display","block");
+        },1000);
+        
+        
+    })
+
+        $('.shopping').mouseout(function(){
+                $(".jiazai").css("display","block");
+                $('.jiazaiwenzi').css("display","none");
+        })
+    

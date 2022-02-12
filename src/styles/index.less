@@ -4,6 +4,7 @@ header {
 		background-color: #333;
 		height: 40px;
 		position: relative;
+		z-index: 3;
 		>.wrapper {
 			>a {
 				float: left;
@@ -35,9 +36,49 @@ header {
 				cursor: pointer;
 				line-height: 40px;
 				position: relative;
+				z-index: 3;
+				line-height: 40px;
+				&:hover{
+					background-color: white;
+					color: #FF6700;
+					+.shoppinglist{
+						height: 90px;
+						transition: height 1s;
+					}
+				}
 				>span {
 					margin-right: 5px;
 					font-size: 18px;
+					
+				}
+			}
+			.shoppinglist{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: absolute;
+				width: 300px;
+				top: 40px;
+				overflow: hidden;
+				height: 0px;
+				right: 146px;
+				bottom: -90px;
+				z-index: 2;
+				background-color: white;
+				box-shadow: 0px 10px 10px rgb(0 0 0 / 60%);
+				text-align: center;
+				font-size: 12px;
+				line-height: 90px;
+				display: block;
+				
+				span{
+					display: none;
+				}
+				.jiazai{
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translateX(-50%) translateY(-50%);
 				}
 			}
 		}
@@ -48,6 +89,7 @@ header {
 		position: relative;
 		>.wrapper {
 			>.xiaomi {
+				display: block;
 				float: left;
 				color: #f69000;
 				line-height: 100px;
@@ -111,10 +153,11 @@ header {
 					}
 				}
 			}
-			>.shousuo {
+			>.sousuo {
 				float: left;
 				margin-top: 20px;
 				position: relative;
+				
 				>input {
 					border: 1px solid #e1e1e1;
 					&:nth-child(2) {
@@ -126,7 +169,19 @@ header {
 						line-height: 65px;
 						border-left: 0px;
 						cursor: pointer;
+						
 					}
+				}
+				.fangdajing{
+					height: 62px;
+					width: 62px;
+					right: 0px;
+					transition: .2s;
+					&:hover{
+						background-color: #ff6700;
+						color: white;
+					}
+					
 				}
 				>#seekbox {
 					float: left;
@@ -134,14 +189,16 @@ header {
 					width: 240px;
 					padding-left: 15px;
 					line-height: 65px;
+					
 				}
 				>div {
 					position: absolute;
-					top: 15px;
-					right: 15px;
+					text-align: center;
+					line-height: 62px;
 					cursor: pointer;
 					>span {
 						font-size: 30px;
+
 					}
 				}
 				&:hover {
