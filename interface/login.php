@@ -40,19 +40,18 @@
 
   // 3. 查询数据
   $sql = "select * from users where username='$username' and password='$password'";
-
+  
   $results = $mysql->query($sql);
 
   $mysql->close(); // 关闭数据库连接
-
-  // var_dump($results);
+  
 
   if($results->num_rows>0){
     echo '<script>alert("登录成功");</script>';
-    echo '<script>location.href="https://www.baidu.com";</script>';
+    echo '<script>location.href="../src/index.html";</script>';
   }else{
     echo '<script>alert("登录失败");</script>';
-    echo '<script>location.href="../eg02.login.html";</script>';
+    echo '<script>location.href="../src/login.html";</script>';
   }
 
 ?>

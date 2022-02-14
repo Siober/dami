@@ -1,5 +1,5 @@
 <?php
-
+  header('content-type:text/html;charset=utf-8');
 
   $mysql_conf = array(
     'host'=>'localhost:3306',   // 主机名和端口号
