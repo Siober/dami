@@ -32,7 +32,7 @@ $('.leftbuttom').click(function(){
     qiehuan-=1;
     
     if(qiehuan<=0){
-        qiehuan=5;
+        qiehuan=3;
     }
     $('.qiehuan').attr("src","./img/xiaoai"+qiehuan+".jpg");
     $(".jindutiao span:nth-child("+qiehuan+")").siblings().removeClass('active');

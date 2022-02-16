@@ -511,6 +511,14 @@ main .main1 .wrapper .right .myselect .top {
   display: flex;
   justify-content: space-between;
 }
+main .main1 .wrapper .right .myselect .bottom {
+  margin-top: 20px;
+  padding-top: 20px;
+}
+main .main1 .wrapper .right .myselect .bottom span {
+  color: #ff6700;
+  font-size: 24px;
+}
 main .main1 .wrapper .right .buttom {
   color: #ff6700;
   font-size: 24px;
