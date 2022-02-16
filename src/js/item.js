@@ -13,3 +13,55 @@ window.onscroll=function(){
         gohome.style.display='none';
     }
 }
+
+let qiehuan=1;
+$('.rightbuttom').click(function(){
+    qiehuan+=1;
+
+
+
+    if(qiehuan>$('.jindutiao').children().length){
+        qiehuan=1;
+    }
+    $('.qiehuan').attr("src","./img/xiaoai"+qiehuan+".jpg");
+    $(".jindutiao span:nth-child("+qiehuan+")").siblings().removeClass('active');
+    $(".jindutiao span:nth-child("+qiehuan+")").addClass('active');
+})
+
+$('.leftbuttom').click(function(){
+    qiehuan-=1;
+    
+    if(qiehuan<=0){
+        qiehuan=5;
+    }
+    $('.qiehuan').attr("src","./img/xiaoai"+qiehuan+".jpg");
+    $(".jindutiao span:nth-child("+qiehuan+")").siblings().removeClass('active');
+    $(".jindutiao span:nth-child("+qiehuan+")").addClass('active');
+})
+
+let pic;
+window.onload=function(){
+
+    loadpic();
+
+}
+$('.qiehuan').mouseover (function(){
+    clearInterval(pic);
+})
+$('.qiehuan').mouseout (function(){
+    loadpic();
+})
+
+
+function loadpic(){
+    pic=setInterval(function(){
+        qiehuan+=1;
+        if(qiehuan>$('.jindutiao').children().length){
+            qiehuan=1;
+        }
+        $('.qiehuan').attr("src","./img/xiaoai"+qiehuan+".jpg");
+        $(".jindutiao span:nth-child("+qiehuan+")").siblings().removeClass('active');
+        $(".jindutiao span:nth-child("+qiehuan+")").addClass('active');
+
+    }, 1000);
+}

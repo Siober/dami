@@ -409,6 +409,9 @@ main .main1 .wrapper .left .jindutiao {
   width: 550px;
   bottom: 50px;
 }
+main .main1 .wrapper .left .jindutiao .active {
+  background-color: black;
+}
 main .main1 .wrapper .left .jindutiao span {
   cursor: pointer;
   display: inline-block;

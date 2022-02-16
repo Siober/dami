@@ -575,10 +575,10 @@ main > .box3 > .bottom > .wrapper > .right > .box > .two > a:nth-child(1) {
   display: flex;
   justify-content: space-around;
 }
-main > .box3 > .bottom > .wrapper > .right > .box > .two > a:nth-child(1) > div {
+main > .box3 > .bottom > .wrapper > .right > .box > .two > .small > div {
   padding: 20px 0px;
 }
-main > .box3 > .bottom > .wrapper > .right > .box > .two > a:nth-child(1) > div > p:nth-child(1) {
+main > .box3 > .bottom > .wrapper > .right > .box > .two > .small > div > p:nth-child(1) {
   color: #333;
   font-size: 15px;
   font-weight: 500;
@@ -589,7 +589,7 @@ main > .box3 > .bottom > .wrapper > .right > .box > .two > a:nth-child(1) > div 
   color: #ff6700;
   font-size: 15px;
 }
-main > .box3 > .bottom > .wrapper > .right > .box > .two > a:nth-child(1) > div p:nth-child(2) {
+main > .box3 > .bottom > .wrapper > .right > .box > .two > .small > div p:nth-child(2) {
   color: #333;
   font-size: 15px;
   font-weight: 500;
@@ -618,7 +618,7 @@ main > .box3 > .bottom > .wrapper > .right > .box > .two > .llgd > div > p:nth-c
   font-size: 15px;
   color: #b0b0b0;
 }
-main > .box3 > .bottom > .wrapper > .right > .abox > .two > .llgd > span {
+main > .box3 > .bottom > .wrapper > .right > .box > .two > .llgd  span {
   margin-top: 35px;
   font-size: 55px;
   color: #ff6700;
