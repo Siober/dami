@@ -1,67 +1,68 @@
-$('.xz').click(function(){
 
-    $(this).siblings().removeClass('active');
-    $(this).addClass('active');
-})
-window.onscroll=function(){
-    let gohome=document.querySelector('.gogo');
-    if(document.documentElement.scrollTop>=500){
+
+
+    $(function () {
+        // 获得商品id
+        // 商品id在url的search部分
+    
+        let id = location.search.split('=')[1];
+
+
+
+
+
+
+        $.ajax({
+        url: '../interface/getitem.php',
+        type: 'get',
+        data: { id },
+        dataType: 'json'
+        }).then(res => {
         
-        gohome.style.display='flex';
+            let pic = JSON.parse(res.picture);
+            let name=$('.name')
+            let title=$('.title12')
+            let pice1=$('.pice1')
+            let pice=$('.pice')
+            let pricurt=$('.pricurt1')
+            console.log(res.id)
+            name.html(res.name);
+            title.html(res.title);
+            pice1.html(res.price+"元");
+            pice.html(res.price+"元");
+            pricurt.attr("src","./"+pic[0].src);
+            
+
+    $('#additem').on('click',function(){
+        addItem(res.id,1);
+    });
+    }).catch(xhr => {
+        console.log(xhr.status);
+    });
+
+});
+
+function addItem(id,num){
+    let product={id,num};
+    let shop =cookie.get('shop');
+
+    if(shop){
+        shop=JSON.parse(shop);
+
+        if(shop.some(el=>el.id==id)){
+            let index=shop.findIndex(elm=>elm.id==id);
+            let count = parseInt(shop[index].num);
+            count+=parseInt(num);
+            shop[index].num=count;
+        }else{
+            shop.push(product);
+        }
+
 
     }else{
-        gohome.style.display='none';
+        shop=[];
+        shop.push(product);
     }
-}
-
-let qiehuan=1;
-$('.rightbuttom').click(function(){
-    qiehuan+=1;
-
-
-
-    if(qiehuan>$('.jindutiao').children().length){
-        qiehuan=1;
-    }
-    $('.qiehuan').attr("src","./img/xiaoai"+qiehuan+".jpg");
-    $(".jindutiao span:nth-child("+qiehuan+")").siblings().removeClass('active');
-    $(".jindutiao span:nth-child("+qiehuan+")").addClass('active');
-})
-
-$('.leftbuttom').click(function(){
-    qiehuan-=1;
-    
-    if(qiehuan<=0){
-        qiehuan=3;
-    }
-    $('.qiehuan').attr("src","./img/xiaoai"+qiehuan+".jpg");
-    $(".jindutiao span:nth-child("+qiehuan+")").siblings().removeClass('active');
-    $(".jindutiao span:nth-child("+qiehuan+")").addClass('active');
-})
-
-let pic;
-window.onload=function(){
-
-    loadpic();
-
-}
-$('.qiehuan').mouseover (function(){
-    clearInterval(pic);
-})
-$('.qiehuan').mouseout (function(){
-    loadpic();
-})
-
-
-function loadpic(){
-    pic=setInterval(function(){
-        qiehuan+=1;
-        if(qiehuan>$('.jindutiao').children().length){
-            qiehuan=1;
-        }
-        $('.qiehuan').attr("src","./img/xiaoai"+qiehuan+".jpg");
-        $(".jindutiao span:nth-child("+qiehuan+")").siblings().removeClass('active');
-        $(".jindutiao span:nth-child("+qiehuan+")").addClass('active');
-
-    }, 1000);
+    console.log(shop);
+    cookie.set('shop',JSON.stringify(shop));
 }

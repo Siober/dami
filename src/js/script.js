@@ -1,49 +1,49 @@
 //菜单栏的显示
-$("#banner_menu_wrap").children().hover(function(){
-    $(this).css("background","#ff6700");
-    $(this).children(".banner_menu_content").css("border","1px solid #F0F0F0").show();
-},function(){
-    $(this).css("background","none");
-    $(this).children(".banner_menu_content").css("border","0px solid #F0F0F0").hide();
+$("#banner_menu_wrap").children().hover(function () {
+    $(this).css("background", "#ff6700");
+    $(this).children(".banner_menu_content").css("border", "1px solid #F0F0F0").show();
+}, function () {
+    $(this).css("background", "none");
+    $(this).children(".banner_menu_content").css("border", "0px solid #F0F0F0").hide();
 });
 //轮播
-$(function(){
-    var i=0;
+$(function () {
+    var i = 0;
     var big_banner_pic = $("#big_banner_pic");
-    var allimg=$("#big_banner_pic>li").length;
-    function img_change(){
-        var img_i=i*-1226+"px";
-        big_banner_pic.animate({opacity:".2"},100,function(){
-            big_banner_pic.css("left",img_i );
+    var allimg = $("#big_banner_pic>li").length;
+    function img_change() {
+        var img_i = i * -1226 + "px";
+        big_banner_pic.animate({ opacity: ".2" }, 100, function () {
+            big_banner_pic.css("left", img_i);
             big_banner_pic.animate({
                 opacity: "1"
             }, 100);
         })
     }
-    function automatic(){
-        i+=1;
-        if(i>=allimg){
-            i=0;
+    function automatic() {
+        i += 1;
+        if (i >= allimg) {
+            i = 0;
         }
         img_change();
     }
     change_self_time = setInterval(automatic, 3000);
     //轮播上一张下一张图标控制
-    $("#big_banner_change_wrap").hover(function(){
+    $("#big_banner_change_wrap").hover(function () {
         clearInterval(change_self_time);
         $("#big_banner_change_wrap").children().show();
-    },function(){
+    }, function () {
         let change_self_time = setInterval(automatic, 3000);
         $("#big_banner_change_wrap").children().hide();
     })
-    $("#big_banner_change_prev").click(function(){
+    $("#big_banner_change_prev").click(function () {
         i += 1;
         if (i >= allimg) {
             i = 0;
         }
         img_change();
     })
-    $("#big_banner_change_next").click(function(){
+    $("#big_banner_change_next").click(function () {
         i -= 1;
         if (i <= 0) {
             i = allimg - 1;
@@ -52,34 +52,34 @@ $(function(){
     })
 })
 
-window.onscroll=function(){
-    let gohome=document.querySelector('.gogo');
-    if(document.documentElement.scrollTop>=500){
-        
-        gohome.style.display='flex';
+window.onscroll = function () {
+    let gohome = document.querySelector('.gogo');
+    if (document.documentElement.scrollTop >= 500) {
 
-    }else{
-        gohome.style.display='none';
+        gohome.style.display = 'flex';
+
+    } else {
+        gohome.style.display = 'none';
     }
 }
 
 
-    
-    $('.yiru').hover(function(){
-        $(this).siblings().removeClass('active');
-        $(this).addClass('active');
-    })
-    $('.shopping').hover(function(){
-        let time2=setTimeout(function(){//定时器 
-            $(".jiazai").css("display","none");
-            $(".jiazaiwenzi").delay(1000).css("display","block");
-        },1000);
-        
-        
-    })
 
-        $('.shopping').mouseout(function(){
-                $(".jiazai").css("display","block");
-                $('.jiazaiwenzi').css("display","none");
-        })
-    
+$('.yiru').hover(function () {
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
+})
+$('.shopping').hover(function () {
+    let time2 = setTimeout(function () {//定时器 
+        $(".jiazai").css("display", "none");
+        $(".jiazaiwenzi").delay(1000).css("display", "block");
+    }, 1000);
+
+
+})
+
+$('.shopping').mouseout(function () {
+    $(".jiazai").css("display", "block");
+    $('.jiazaiwenzi').css("display", "none");
+})
+

@@ -36,6 +36,28 @@ main {
   overflow: hidden;
   padding: 38px 0;
 }
+main ul {
+  list-style: none;
+  overflow: hidden;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+main .item {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+  overflow: hidden;
+}
+main .item img {
+  width: 100px;
+  height: 100px;
+}
+main .item > div {
+  float: left;
+  line-height: 112px;
+  margin: 0 5px;
+}
 main > .box1 > .wrapper {
   padding-left: 300px;
   margin: 65px 0 130px;
