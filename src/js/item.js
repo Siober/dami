@@ -34,6 +34,8 @@
             
 
     $('#additem').on('click',function(){
+        
+        window.location.href="../src/shop.html";
         addItem(res.id,1);
     });
     }).catch(xhr => {
